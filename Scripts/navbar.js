@@ -6,10 +6,10 @@ hamburger.addEventListener("click", () => {
     NavList.classList.toggle("active");
 });
 
-document.querySelectorAll(".nav-item").forEach(n => n.addEventListener("click", () => {
-     hamburger.classList.remove("active");
-     NavList.classList.remove("active");
- }));
+//document.querySelectorAll(".nav-item").forEach(n => n.addEventListener("click", () => {
+//     hamburger.classList.remove("active");
+//     NavList.classList.remove("active");
+//}));
 
 function toggleActive(element) {
     const navigationItems = document.querySelectorAll('.nav-item');
