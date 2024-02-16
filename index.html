@@ -1,459 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RUDRA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Styles/navbar.css">
-    <link rel="stylesheet" href="Styles/btn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- css style sheets -->
+    <link rel="stylesheet" href="Styles/navbar.css" />
+    <link rel="stylesheet" href="Styles/main-header.css" />
+    <link rel="stylesheet" href="Styles/btn.css" />
 
-    <style>
-        :root{
-            --primary-color: #1F1F1F;
-            --golden: #fec195;
-            --golden-shadow: #fec1958c;
-            --text-color: antiquewhite;
-            --bg-color: rgb(211, 211, 211);
-            --nav-list-bg: white;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            color: inherit;
-            box-sizing: border-box;
-            font-family:  lato ,Arial, Helvetica, sans-serif;
-        }
-
-        body{
-            overflow-x: hidden;
-        }
-
-        header,.main-header{
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            user-select: none;
-        } 
-        
-        *::selection{
-            background: var(--golden);
-            color: antiquewhite;
-
-        }
-
-        .icon-svg{
-            position: absolute;
-            transform: translateX(-10%) translateY(10%);
-        }
-
-
-    </style>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
     <style>
-        .main-header{
-            background-color: #151515;
-            color: rgb(255, 255, 255);
-            height: 97svh;
-            display: grid;
-            grid-template-columns: 55vw 45vw ;
-            grid-template-rows: 87svh 10svh;
-            grid-template-areas: "tagline slideshow" "blank slideshow";
-            place-items: center;
-        }
+      :root {
+        --primary-color: #1f1f1f;
+        --golden: #fec195;
+        --dark-golden: rgb(237, 189, 120);
+        --dark-golden2: #b98e33;
+        --golden-shadow: #fec1958c;
+        --text-color: antiquewhite;
+        --bg-color: rgb(211, 211, 211);
+        --white: #fff;
+        --nav-list-bg: #fff;
+      }
 
-        .main-header-content{
-            grid-area: tagline;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: inherit;
+        box-sizing: border-box;
+        font-family: lato, Arial, Helvetica, sans-serif;
+      }
 
-        .tagline{
-            font-size: 3.5rem;
-            word-spacing: 0.3rem;
+      body {
+        overflow-x: hidden;
+        display: grid;
+        grid-template-rows: 13svh 100% 40svh;
+        grid-template-areas: "navbar" "main" "footer";
+        background-color: var(--white);
+      }
 
-        }
+      main {
+        grid-area: main;
+        display: grid;
+        grid-template-rows: 100svh 10svh 87svh 87svh;
+        grid-template-areas: "main-header" "blank1" "AboutUs" "property-section";
+      }
 
-        .line1,.line2{
-            padding: 0.15em;
-        }
+      header,
+      .main-header {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        user-select: none;
+      }
 
-        .post-context{
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1.25rem;
-            padding: 0.8em 0em;
-        }
+      *::selection {
+        background: var(--dark-golden);
+        color: white;
+      }
+
+      .icon-svg {
+        position: absolute;
+        transform: translateX(-10%) translateY(10%);
+      }
+    </style>
 
 
-        .read-more-btn{
-            margin: 3rem 0rem;
-        }
+    <style>
+      
 
+      .AboutUs{
+        grid-area: AboutUs;
+      }
 
-        .bg-overlay {
-            display: none;
-        }
+      .about-cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap:4rem;
+      }
 
-        .slideshow{
-            grid-area: slideshow;
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
-            position: relative;
-            right: -10%;
-            bottom: -10%;
-            z-index: 0;
+      .about-card{
+        display: grid;
+        grid-template-rows: 30% 10% 55%;
+        grid-template-areas: "img" "title" "discription";
+        gap: 0.5rem;
 
-            background-image: url('https://media.designcafe.com/wp-content/uploads/2022/07/15170403/luxury-home-interior-design-with-marble-flooring.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        text-align: center;
+        width: 350px;
+        height: 510px;
+        padding: 2.5rem;
+        border: 0.8px solid var(--dark-golden2);
+        border-radius: 5px;
+      }
 
-        }
-
-        .pre-context{
-          margin: 1.5rem 0rem;
-        }
+      .abt-img,.abt-title{
+        display: grid;
+        place-items: center;
+      }
+      
+      .abt-title{
+        font-size: 1.5rem;
+        font-style: italic;
         
-        .pre-context-strike,.pre-context-text{
-          display: inline;
-          color: var(--golden);
-          font-weight: bold;
-          font-size: 1.2rem;
-        }
-
-        .pre-context-strike {
-            position: relative;
-            padding-left: 6rem; /* Add padding to create space between the line and the text */
-            margin-right: 10px;
-        }
-
-        .pre-context-strike::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            border-top: 3px solid var(--golden); /* Adjust the color and thickness of the line */
-        }
-
-        @media(max-width:1425px){
-            :root{
-                --main-content-height: 87svh;
-            }
-
-            .main-header{
-                grid-template-columns: 100%;
-                grid-template-rows: var(--main-content-height);
-                grid-template-areas: "content";
-                height: var(--main-content-height);
-            }
-
-            
-            .main-header-content{
-                grid-area: content;
-                z-index: 2;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .pre-context{
-              margin: 1rem 0rem;
-            }
-
-            .pre-context-strike{
-              display: none;
-            }
-
-            .pre-context-text{
-              font-size: 1.5rem;
-            }
-
-            .tagline{
-                
-                text-align: center;
-            }
-            
-            .post-context{
-                font-size: 1rem;
-                color: rgba(235, 232, 232, 0.903);
-                text-align: center;
-            }
-            
-            .read-more-btn{
-                margin: 2rem 0rem;
-            }
-
-            .slideshow{
-                grid-area: content;
-                position: none;
-                border-radius: 0px;
-                right: 0%;
-                bottom: 0%;
-                z-index: 0;
-            }
-    
-            .bg-overlay {
-                display: block;
-                grid-area: content;
-                right: 0%;
-                bottom: 0%;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 1;
-            }
-        }
-        
-        @media(max-width:750px){
-            
-            .pre-context{
-              margin: 0.7rem 0rem;
-            }
-
-            .pre-context-text{
-              font-size: 1.4rem;
-            }
-
-            .tagline{
-                font-size: 2.5rem;
-            }
-
-            .post-context{
-                display: none;
-            }
-
-            .read-more-btn{
-                margin: 1.5rem 0rem;
-                padding: 0.5rem 1rem;
-            }
-        }
-
-        @media(max-width:525px){
-
-            :root{
-                --main-content-height: 40svh;
-            }
-            
-            .pre-context{
-              margin: 0.5rem 0rem;
-            }
-
-            .pre-context-text{
-              font-size: 1rem;
-            }
-
-            .tagline{
-                font-size: 1.3rem;
-            }
-
-            .read-more-btn{
-                margin: 1rem 0rem;
-                padding: 0.5em 1em;
-                font-size: 0.8rem;
-            }
-
-        }
+      }
+      
+      .abt-desc{
+        font-size: 0.9rem;
+        line-height: 1.5em;
+        padding: 0em 0.5ch;
+      }
 
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
+      <div class="site-logo">Logo</div>
 
-        <div class="site-logo">Logo</div>
-
-        <nav>
-            <div class="nav-list">
-                <a href="#" class="nav-item" onclick="toggleActive(this)"><strong>Home</strong></a>
-                <a href="#" class="nav-item" onclick="toggleActive(this)"><strong>About Us</strong></a>
-                <div class="nav-item project-main" onclick="toggleActive(this)">
-
-                    <div class="poject-label">
-                        <strong>Projects</strong>
-                        <svg class="dropdown-arrow icon-svg" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                            <path fill="currentColor" stroke="currentColor" stroke-width="2" d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15a1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16"/>
-                        </svg>
-                          
-                    </div>
-
-                    <ul class="project-list">
-                        <li class="project-links bottom-border"><a href="#">Upcoming Projects</a></li>
-                        <li class="project-links"><a href="#">Completed Projects</a></li>
-                    </ul>
-                </div>
-
-                <a href="#" class="nav-item" onclick="toggleActive(this)"><strong>Contact Us</strong></a>
-                <a href="#" class="nav-item" onclick="toggleActive(this)"><strong>CSR</strong></a>
-                
-                <a href="#" class="enquiry-btn">
-                    <strong>Sales Enquiry</strong>
-                </a>    
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-    
-    <main>
-
-      <section class="main-header">
-
-        <div class="main-header-content">
-
-            <div class="pre-context">
-              <p class="pre-context-strike"></p>
-              <p class="pre-context-text">Presenting</p>
+      <nav>
+        <div class="nav-list">
+          <a href="#" class="nav-item" onclick="toggleActive(this)"
+            ><strong>Home</strong></a
+          >
+          <a href="#" class="nav-item" onclick="toggleActive(this)"
+            ><strong>About Us</strong></a
+          >
+          <div class="nav-item project-main" onclick="toggleActive(this)">
+            <div class="poject-label">
+              <strong>Projects</strong>
+              <svg
+                class="dropdown-arrow icon-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15a1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16"
+                />
+              </svg>
             </div>
 
-            <div class="tagline">
-                <strong class="line1">Your Perfect Home Where</strong><br>
-                <div class="line2"><strong>Dreams Meet </strong><Strong style="color: var(--golden)">Reality</Strong></div>
-            </div> 
-            
+            <ul class="project-list">
+              <li class="project-links bottom-border">
+                <a href="#">Upcoming Projects</a>
+              </li>
+              <li class="project-links"><a href="#">Completed Projects</a></li>
+            </ul>
+          </div>
 
-            <p class="post-context">Exclusive Residences in Prime Locations, Elevating Your Lifestyle Experience.</p>
+          <a href="#" class="nav-item" onclick="toggleActive(this)"
+            ><strong>Contact Us</strong></a
+          >
+          <a href="#" class="nav-item" onclick="toggleActive(this)"
+            ><strong>CSR</strong></a
+          >
 
-            <button class="read-more-btn">
-                Read More
-                <div class="star-1">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xml:space="preserve"
-                    version="1.1"
-                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                    viewBox="0 0 784.11 815.53"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <defs></defs>
-                    <g id="Layer_x0020_1">
-                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                      <path
-                        class="fil0"
-                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-                <div class="star-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xml:space="preserve"
-                    version="1.1"
-                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                    viewBox="0 0 784.11 815.53"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <defs></defs>
-                    <g id="Layer_x0020_1">
-                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                      <path
-                        class="fil0"
-                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-                <div class="star-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xml:space="preserve"
-                    version="1.1"
-                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                    viewBox="0 0 784.11 815.53"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <defs></defs>
-                    <g id="Layer_x0020_1">
-                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                      <path
-                        class="fil0"
-                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-                <div class="star-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xml:space="preserve"
-                    version="1.1"
-                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                    viewBox="0 0 784.11 815.53"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <defs></defs>
-                    <g id="Layer_x0020_1">
-                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                      <path
-                        class="fil0"
-                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-                <div class="star-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xml:space="preserve"
-                    version="1.1"
-                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                    viewBox="0 0 784.11 815.53"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <defs></defs>
-                    <g id="Layer_x0020_1">
-                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                      <path
-                        class="fil0"
-                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-                <div class="star-6">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xml:space="preserve"
-                    version="1.1"
-                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                    viewBox="0 0 784.11 815.53"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <defs></defs>
-                    <g id="Layer_x0020_1">
-                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                      <path
-                        class="fil0"
-                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-              </button>
-
+          <a href="#" class="enquiry-btn">
+            <strong>Sales Enquiry</strong>
+          </a>
         </div>
-        
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="main-header">
+        <div class="main-header-content">
+          <div class="pre-context SlideInLeft">
+            <p class="pre-context-strike"></p>
+            <p class="pre-context-text">Presenting</p>
+          </div>
+
+          <h1 class="tagline">
+            <strong class="line1 SlideInRight">Your Perfect Home Where</strong
+            ><br />
+            <div class="line2 SlideInLeft">
+              <strong>Dreams Meet </strong
+              ><strong style="color: var(--golden)">Reality</strong>
+            </div>
+          </h1>
+
+          <p class="post-context SlideInRight">
+            Exclusive Residences in Prime Locations, Elevating Your Lifestyle
+            Experience.
+          </p>
+
+          <button class="read-more-btn">
+            Read More
+            <div class="star-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+          </button>
+        </div>
+
+        <button class="status-button">
+          <span class="status-button-left">
+            <p class="status-line1">2+</p>
+            <p class="status-line2">Projects Done</p>
+          </span>
+          <span class="status-button-right">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="3rem"
+              height="3rem"
+              viewBox="0 0 20 20"
+            >
+              <path fill="currentColor" d="m8 6l6 4.03L8 14z" />
+            </svg>
+          </span>
+        </button>
+
         <div class="bg-overlay"></div>
-        <div class="slideshow"></div>
+        <div class="slideshow OpacityIn"></div>
       </section>
 
-      <section class="main-content">
-        
+      <section class="AboutUs">
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="abt-img"><img src="https://admin.rustomjee.com/assets/uploads/about_us/journey/vision_icon_20201019160307454457596.png" alt=""></div>
+            <div class="abt-title">Vision</div>
+            <p class="abt-desc">At Rudra Groups, our vision is to redefine the real estate landscape by seamlessly integrating innovation, sustainability, and community-centric values into every project. We aspire to create architectural marvels that not only elevate living standards but also foster a sense of belonging. Through relentless dedication and forward-thinking, we aim to inspire and enrich lives, setting new benchmarks for excellence in the industry.</p>
+          </div>
+  
+          <div class="about-card">
+            <div class="abt-img"><img src="https://admin.rustomjee.com/assets/uploads/about_us/journey/mission_icon_202010191603074544584260.png" alt=""></div>
+            <div class="abt-title">Mission</div>
+            <p class="abt-desc">Our mission is to provide unparalleled real estate solutions, catering to diverse needs with integrity, expertise, and personalized service. We strive to exceed expectations, fostering lasting relationships, and empowering clients to achieve their property goals with confidence and satisfaction.</p>
+          </div>
+  
+          <div class="about-card">
+            <div class="abt-img"><img src="https://admin.rustomjee.com/assets/uploads/about_us/journey/values_icon_202010191603074544241338.png" alt=""></div>
+            <div class="abt-title">Values</div>
+            <p class="abt-desc">At our real estate company, integrity is the cornerstone of everything we do. We prioritize transparency, honesty, and professionalism in all transactions. Our commitment to excellence ensures every client receives unparalleled service, while our dedication to innovation drives us to continually adapt and exceed expectations in the dynamic real estate market.</p>
+          </div>
+        </div>
+
       </section>
 
+      <!-- <section class="property-section">
+        <div class="property-title">
+          <h2 class="property-heading">Our Properties</h2>
+        </div>
+      </section> -->
     </main>
 
     <script src="Scripts/navbar.js"></script>
-</body>
+  </body>
 </html>

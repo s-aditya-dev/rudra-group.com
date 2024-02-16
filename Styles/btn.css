@@ -1,13 +1,14 @@
 .read-more-btn {
     position: relative;
-    padding: 12px 35px;
-    background: #fec195;
+    padding: 0.8em 2.1em;
+    margin: 3rem 0rem;
+    background: var(--golden);
     font-size: 17px;
     font-weight: 500;
     color: #181818;
-    border: 3px solid #fec195;
+    border: 3px solid var(--golden);
     border-radius: 8px;
-    box-shadow: 0 0 0 #fec1958c;
+    box-shadow: 0 0 0 var(--golden-shadow);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -80,8 +81,8 @@
 
 .read-more-btn:hover {
     background: rgb(0,0,0,0.8);
-    color: #fec195;
-    box-shadow: 0 0 25px #fec1958c;
+    color: var(--golden);
+    box-shadow: 0 0 25px var(--golden-shadow);
 }
 
 .read-more-btn:hover .star-1 {
@@ -146,4 +147,26 @@
 
 .fil0 {
     fill: #fffdef;
+}
+
+@media (max-width:1425px) {
+    .read-more-btn{
+        margin: 2rem 0rem;
+    }
+}
+
+
+@media (max-width:750px) {
+    .read-more-btn{
+        margin: 1.5rem 0rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width:525px) {
+    .read-more-btn{
+        margin: 1rem 0rem;
+        padding: 0.5em 1em;
+        font-size: 0.8rem;
+    }
 }
