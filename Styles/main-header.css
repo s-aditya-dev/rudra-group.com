@@ -262,7 +262,8 @@
 
 @media (max-width: 525px) {
   :root {
-    --main-content-height: 37svh;
+    /* --main-content-height: 37svh; */
+    --main-content-height: 87svh;
   }
 
   .pre-context {
