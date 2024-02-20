@@ -1,5 +1,9 @@
 /* Animations */
 
+:root{
+  --main-header-bg: url("https://media.designcafe.com/wp-content/uploads/2022/07/15170403/luxury-home-interior-design-with-marble-flooring.jpg")
+}
+
 @keyframes slideFromLeft {
   from {
     left: -200%;
@@ -31,13 +35,11 @@
 .SlideInRight {
   position: relative;
   animation: slideFromRight 1.5s ease-out;
-  /* animation-timeline: scroll(); */
 }
 
 .SlideInLeft {
   position: relative;
   animation: slideFromLeft 1.5s ease-out;
-  /* animation-timeline: scroll(); */
 }
 
 .OpacityIn {
@@ -120,7 +122,7 @@
   bottom: -10%;
   z-index: 0;
 
-  background-image: url("https://media.designcafe.com/wp-content/uploads/2022/07/15170403/luxury-home-interior-design-with-marble-flooring.jpg");
+  background-image: var(--main-header-bg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
