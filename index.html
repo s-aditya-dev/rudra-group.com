@@ -19,15 +19,10 @@
     <link rel="stylesheet" href="Styles/navbar.css" />
     <link rel="stylesheet" href="Styles/main-header.css" />
     <link rel="stylesheet" href="Styles/btn.css" />
+    <link rel="stylesheet" href="Styles/footer.css" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <style>
       :root {
@@ -41,7 +36,7 @@
         --white: #fff;
         --gray: #6c757d;
         --nav-list-bg: #fff;
-        --main-body-row: 13svh 100% 55svh;
+        --main-body-row: 13svh 350svh 55svh;
       }
 
       * {
@@ -136,200 +131,6 @@
         font-size: 0.9rem;
         line-height: 1.5em;
         padding: 0em 0.5ch;
-      }
-
-    </style>
-
-    <!-- Footer -->
-    <style>
-      footer{
-        grid-area: footer;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1.5fr;
-        grid-template-rows:  85% 15%;
-        grid-template-areas: "company-footer quick-links contact" "extra extra extra";
-        background: var(--primary-color);
-        color: var(--white);
-        font-weight: bold;
-      }
-
-      .footer-title{
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-      }
-
-      .footer-container-company{
-        display: grid;
-        grid-template-rows: 30% 80%;
-        grid-template-areas: "title" "content";
-        padding: 1em 2.5em;
-      }
-
-      .footer-container-quick-links{
-        display: grid;
-        grid-template-rows: 20% 80%;
-        grid-template-areas: "title" "content";
-        padding: 1em 2.5em;
-      }
-
-      .footer-container-contact{
-        display: grid;
-        grid-template-rows: 20% 80%;
-        grid-template-areas: "title" "content";
-        padding: 1em 2.5em;
-      }
-
-      .company-footer{
-        grid-area: company-footer;
-      }
-      
-      .quick-links{
-        grid-area: quick-links;
-        border-left: 1px solid var(--gray);
-        border-right: 1px solid var(--gray);
-      }
-
-      .quick-links-item{
-        display: grid;
-        grid-template-columns: repeat(2,50%);
-        grid-template-rows: repeat(4,25%);
-        align-items: center;
-      }
-
-
-      .contact{
-        grid-area: contact;
-      }
-
-      .contact-item{
-        display: grid;
-        grid-template-columns: 10% 90%;
-        grid-area: 50% 50%;
-        grid-template-areas: "logo title" "logo details";
-        margin: 0.5em 0;
-      }
-
-      .contact-item .icon{
-        grid-area: logo;
-        font-size: 1.8rem;
-        display: flex;
-        justify-content: center;
-        align-items: first baseline;
-        padding: 8px;
-        color: var(--golden)
-      }
-
-      .contact-item h3{
-        grid-area: title;
-        padding: 10px 0;
-      }
-
-      .contact-item p{
-        grid-area: details;
-        font-size: 0.9rem;
-      }
-
-      .footer-extra{
-        grid-area: extra;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1.5fr;
-        grid-template-areas: "copyright copyright social";
-        align-items: center;
-        padding: 0 1.25em;
-        border-top: 1px solid var(--gray);
-      }
-
-      .copyright{
-        grid-area: copyright;
-        display: flex;
-        align-items: center;
-      }
-
-      .social{
-        grid-area: social;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .social a{
-        font-size: 1.3rem;
-        border: 3px var(--white) solid;
-        color: var(--white);
-        padding: 7px 10px;
-        transition: all 0.5s ease;
-      }
-
-      .social a:hover{
-        border: 3px var(--golden) solid;
-        background: var(--golden);
-      }
-      
-
-      @media (width < 1100px){
-        :root{ --main-body-row: 13svh 100% 105svh;}
-
-        .footer-container-company{
-          grid-template-rows: 50% 50%;
-        }
-
-        footer{
-          grid-template-columns: repeat(2,1fr);
-          grid-template-rows: 45vh 50vh 10vh;
-          grid-template-areas:  "company-footer quick-links" "contact contact" "extra extra"; 
-        }
-
-        .quick-links{
-          border-left: none;
-          border-right: none;
-        }
-
-        .contact{border-top: 1px solid var(--gray);}
-
-      }
-
-      @media (width < 850px){
-        :root{ --main-body-row: 13svh 100% 170svh;}
-
-        .footer-container-company{
-          grid-template-rows: 50% 50%;
-        }
-
-        footer{
-          grid-template-columns: 1fr;
-          grid-template-rows: 50vh 25vh 60vh 20vh;
-          grid-template-areas:  "company-footer" "quick-links" "contact " "extra"; 
-        }
-
-        .quick-links{
-          border-left: none;
-          border-right: none;
-          border-top: 1px solid var(--gray);
-        }
-
-        .quick-links-item{
-          grid-template-rows: repeat(2,50%);
-        }
-
-        .footer-container-quick-links{
-          grid-template-rows: 40% 60%;
-        }
-
-        .contact{border-top: 1px solid var(--gray);}
-
-        .footer-extra{
-          grid-template-columns: 1fr;
-          grid-template-rows: 10ch 10vh;
-          grid-template-areas: "copyright" "social";
-        }
-
-        .copyright{
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
       }
 
     </style>
